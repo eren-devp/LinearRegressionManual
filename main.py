@@ -78,19 +78,23 @@ def create_list(len):
 
     return new_list
 
-try:
-    dataset_len = int(input("How many sample data do you have?\n> "))
-    # np_list = create_list(dataset_len)
-    np_list = np.zeros(shape=(dataset_len, 2), dtype=float)
-    for i in range(0, dataset_len):
-        print(f"----- {i + 1} -----")
-        np_list[i] = [int(input("Enter the X value: ")), int(input("Enter the Y value: "))]
-        print()
+def start():
+    try:
+        dataset_len = int(input("How many sample data do you have?\n> "))
+        # np_list = create_list(dataset_len)
+        np_list = np.zeros(shape=(dataset_len, 2), dtype=float)
+        for i in range(0, dataset_len):
+            print(f"----- {i + 1} -----")
+            np_list[i] = [int(input("Enter the X value: ")), int(input("Enter the Y value: "))]
+            print()
 
-    linear_model = LinearRegression(np_list)
+        linear_model = LinearRegression(np_list)
 
-    print(linear_model.get_regression())
-    print(linear_model.guess(int(input("Enter the value you wanna try: "))))
+        print(linear_model.get_regression())
+        print(linear_model.guess(int(input("Enter the value you wanna try: "))))
 
-except:
-    print("Please enter valid inputs.")
+    except:
+        print("Please enter valid inputs.")
+
+if __name__ == "main.py":
+    start()
