@@ -96,5 +96,5 @@ def start():
     except:
         print("Please enter valid inputs.")
 
-if __name__ == "main.py":
+if __name__ == "__main__":
     start()
